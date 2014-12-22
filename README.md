@@ -4,21 +4,29 @@ Getting & Cleaning Data - Project 2
 
 Overview & Purpose
 ------------------
-blah blah blah blah
-
+This script will tidy up data from the experimentation shown here:    
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
 
 
 
 Raw Data
 ---------
-Raw data was obtained from the zipped file
+Raw data was obtained from the zipped file here:   
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip   
+
+
 Data was then unpackaged and saved to the working directory
-
 The data has been split to a training and test dataset
-
-Each of the datasets (Training & Test) contains the following data
-
+Each of the datasets (Training & Test) contains the following data  
+- 'README.txt'  
+- 'features_info.txt': Shows information about the variables used on the feature vector.  
+- 'features.txt': List of all features.  
+- 'activity_labels.txt': Links the class labels with their activity name.  
+- 'train/X_train.txt': Training set.  
+- 'train/y_train.txt': Training labels.  
+- 'test/X_test.txt': Test set.  
+- 'test/y_test.txt': Test labels.  
 
 
 Processing Steps of Raw Data to Tidy Data
@@ -94,87 +102,131 @@ mean_data <- cast(melted_data, subject + activity ~variable ,fun.aggregate=mean)
 
 Code Book
 ---------
-Variable descriptions
+**Variable descriptions**
 
-tBodyAcc-mean()-X - time domain , body accelerometer, mean, X direction
-tBodyAcc-mean()-Y" - time domain , body accelerometer, mean, Y direction 
-tBodyAcc-mean()-Z" - time domain , body accelerometer, mean, Z direction
-tBodyAcc-std()-X" - time domain , body accelerometer, Standard Deviation, X direction
-tBodyAcc-std()-Y" - time domain , body accelerometer, Standard Deviation, Y direction
-tBodyAcc-std()-Z" - time domain , body accelerometer, Standard Deviation, Z direction
-tGravityAcc-mean()-X" - 
-tGravityAcc-mean()-Y"
-tGravityAcc-mean()-Z"
-tGravityAcc-std()-X"
-tGravityAcc-std()-Y"
-tGravityAcc-std()-Z"
-tBodyAccJerk-mean()-X"
-tBodyAccJerk-mean()-Y"
-tBodyAccJerk-mean()-Z"
-tBodyAccJerk-std()-X" 
-tBodyAccJerk-std()-Y" 
-tBodyAccJerk-std()-Z" 
-tBodyGyro-mean()-X" 
-tBodyGyro-mean()-Y" 
-tBodyGyro-mean()-Z" 
-tBodyGyro-std()-X" 
-tBodyGyro-std()-Y" 
-tBodyGyro-std()-Z" 
-tBodyGyroJerk-mean()-X" 
-tBodyGyroJerk-mean()-Y" 
-tBodyGyroJerk-mean()-Z" 
-tBodyGyroJerk-std()-X" 
-tBodyGyroJerk-std()-Y" 
-tBodyGyroJerk-std()-Z" 
-tBodyAccMag-mean()" 
-tBodyAccMag-std()" 
-tGravityAccMag-mean()" 
-tGravityAccMag-std()" 
-tBodyAccJerkMag-mean()" 
-tBodyAccJerkMag-std()" 
-tBodyGyroMag-mean()" 
-tBodyGyroMag-std()" 
-tBodyGyroJerkMag-mean()" 
-tBodyGyroJerkMag-std()" 
-fBodyAcc-mean()-X" 
-fBodyAcc-mean()-Y" 
-fBodyAcc-mean()-Z" 
-fBodyAcc-std()-X" 
-fBodyAcc-std()-Y" 
-fBodyAcc-std()-Z" 
-fBodyAcc-meanFreq()-X" 
-fBodyAcc-meanFreq()-Y" 
-fBodyAcc-meanFreq()-Z" 
-fBodyAccJerk-mean()-X" 
-fBodyAccJerk-mean()-Y" 
-fBodyAccJerk-mean()-Z" 
-fBodyAccJerk-std()-X" 
-fBodyAccJerk-std()-Y"
-fBodyAccJerk-std()-Z" 
-fBodyAccJerk-meanFreq()-X" 
-fBodyAccJerk-meanFreq()-Y" 
-fBodyAccJerk-meanFreq()-Z" 
-fBodyGyro-mean()-X" 
-fBodyGyro-mean()-Y" 
-fBodyGyro-mean()-Z" 
-fBodyGyro-std()-X" 
-fBodyGyro-std()-Y" 
-fBodyGyro-std()-Z" 
-fBodyGyro-meanFreq()-X" 
-fBodyGyro-meanFreq()-Y" 
-fBodyGyro-meanFreq()-Z" 
-fBodyAccMag-mean()" 
-fBodyAccMag-std()" 
-fBodyAccMag-meanFreq()" 
-fBodyBodyAccJerkMag-mean()" 
-fBodyBodyAccJerkMag-std()" 
-fBodyBodyAccJerkMag-meanFreq()" 
-fBodyBodyGyroMag-mean()" 
-fBodyBodyGyroMag-std()" 
-fBodyBodyGyroMag-meanFreq()" 
-fBodyBodyGyroJerkMag-mean()" 
-fBodyBodyGyroJerkMag-std()" 
-fBodyBodyGyroJerkMag-meanFreq()"
+
+time domain , Body Accelerometer, Mean and Standard Deviations in the X,Y,Z directions<br>
+tBodyAcc-mean()-X /br>
+tBodyAcc-mean()-Y"</br> 
+tBodyAcc-mean()-Z"</br>
+tBodyAcc-std()-X"</br>
+tBodyAcc-std()-Y"</br>
+tBodyAcc-std()-Z"</br>
+
+
+time domain , Gravity Accelerometer , Mean and Standard Deviations in the X,Y,Z directions<br>
+tGravityAcc-mean()-X"</br>
+tGravityAcc-mean()-Y"</br>
+tGravityAcc-mean()-Z"</br>
+tGravityAcc-std()-X"</br>
+tGravityAcc-std()-Y"</br>
+tGravityAcc-std()-Z"</br>
+
+
+time domain , Body Accelerometer filtered for jerk, Mean and Standard Deviations in the X,Y,Z directions<br>
+tBodyAccJerk-mean()-X"</br>
+tBodyAccJerk-mean()-Y"</br>
+tBodyAccJerk-mean()-Z"</br>
+tBodyAccJerk-std()-X"</br>
+tBodyAccJerk-std()-Y"</br>
+tBodyAccJerk-std()-Z"</br>
+
+
+time domain , Body Gyrometer, Mean and Standard Deviations in the X,Y,Z directions<br>
+tBodyGyro-mean()-X"</br>
+tBodyGyro-mean()-Y"</br>
+tBodyGyro-mean()-Z"</br>
+tBodyGyro-std()-X"</br>
+tBodyGyro-std()-Y"</br>
+tBodyGyro-std()-Z"</br>
+
+
+time domain , Body Gyrometer filtered for jerk, Mean and Standard Deviations in the X,Y,Z directions<br>
+tBodyGyroJerk-mean()-X"</br>
+tBodyGyroJerk-mean()-Y"</br>
+tBodyGyroJerk-mean()-Z"</br>
+tBodyGyroJerk-std()-X"</br>
+tBodyGyroJerk-std()-Y"</br>
+tBodyGyroJerk-std()-Z"</br>
+
+
+time domain , Body Accelerometer filtered for magnitude, Mean and Standard Deviations<br>
+tBodyAccMag-mean()"</br>
+tBodyAccMag-std()"</br>
+
+
+time domain , Gravity Accelerometer filtered for magnitude, Mean and Standard Deviations<br>
+tGravityAccMag-mean()"</br>
+tGravityAccMag-std()"</br>
+
+
+time domain , Body Accelerometer filtered for Jerk and magnitude, Mean and Standard Deviations<br>
+tBodyAccJerkMag-mean()"</br>
+tBodyAccJerkMag-std()"</br>
+
+
+time domain , Gravity Accelerometer filtered for Jerk and magnitude, Mean and Standard Deviations<br>
+tBodyGyroMag-mean()"</br>
+tBodyGyroMag-std()"</br>
+
+
+time domain , Gravity Gyrometer filtered for Jerk and magnitude, Mean and Standard Deviations<br>
+tBodyGyroJerkMag-mean()"</br>
+tBodyGyroJerkMag-std()"</br>
+
+
+Frequency domain , Body Accelerometer, Mean and Standard Deviations in X,Y, and Z directions<br>
+fBodyAcc-mean()-X"</br>
+fBodyAcc-mean()-Y" - </br>
+fBodyAcc-mean()-Z" </br>
+fBodyAcc-std()-X" </br>
+fBodyAcc-std()-Y" </br>
+fBodyAcc-std()-Z" </br>
+fBodyAcc-meanFreq()-X" </br>
+fBodyAcc-meanFreq()-Y" </br>
+fBodyAcc-meanFreq()-Z"</br>
+
+
+Frequency domain , Body Accelerometer filtered for jerk, Mean and Standard Deviations in X,Y, and Z directions<br
+fBodyAccJerk-mean()-X" </br>
+fBodyAccJerk-mean()-Y" </br>
+fBodyAccJerk-mean()-Z" </br>
+fBodyAccJerk-std()-X" </br>
+fBodyAccJerk-std()-Y"</br>
+fBodyAccJerk-std()-Z" </br>
+fBodyAccJerk-meanFreq()-X" </br>
+fBodyAccJerk-meanFreq()-Y" </br>
+fBodyAccJerk-meanFreq()-Z" </br>
+
+
+Frequency domain , Body Gyrometer, Mean and Standard Deviations in X,Y, and Z directions<br
+fBodyGyro-mean()-X" </br>
+fBodyGyro-mean()-Y" </br>
+fBodyGyro-mean()-Z" </br>
+fBodyGyro-std()-X" </br>
+fBodyGyro-std()-Y" </br>
+fBodyGyro-std()-Z" </br>
+fBodyGyro-meanFreq()-X" </br>
+fBodyGyro-meanFreq()-Y" </br>
+fBodyGyro-meanFreq()-Z" </br>
+
+
+Frequency domain , Body Accelerometer filtered for jerk and magnitude, Mean and Standard Deviations in X,Y, and Z directions<br
+fBodyAccMag-mean()" </br>
+fBodyAccMag-std()" </br>
+fBodyAccMag-meanFreq()" </br>
+fBodyBodyAccJerkMag-mean()" </br>
+fBodyBodyAccJerkMag-std()" </br>
+fBodyBodyAccJerkMag-meanFreq()" </br>
+
+
+Frequency domain , Body Gyrometer filtered for jerk and magnitude, Mean and Standard Deviations in X,Y, and Z directions<br
+fBodyBodyGyroMag-mean()" </br>
+fBodyBodyGyroMag-std()" </br>
+fBodyBodyGyroMag-meanFreq()" </br>
+fBodyBodyGyroJerkMag-mean()" </br>
+fBodyBodyGyroJerkMag-std()" </br>
+fBodyBodyGyroJerkMag-meanFreq()" </br>
 
 
 

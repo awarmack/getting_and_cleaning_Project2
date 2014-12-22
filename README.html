@@ -56,12 +56,12 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <h1>Getting &amp; Cleaning Data - Project 2</h1>
 <div id="overview-purpose" class="section level2">
 <h2>Overview &amp; Purpose</h2>
+<p>This script will tidy up data from the experimentation shown here:<br /><a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones</a></p>
 </div>
 <div id="raw-data" class="section level2">
 <h2>Raw Data</h2>
-<p>Raw data was obtained from the zipped file Data was then unpackaged and saved to the working directory</p>
-<p>The data has been split to a training and test dataset</p>
-<p>Each of the datasets (Training &amp; Test) contains the following data</p>
+<p>Raw data was obtained from the zipped file here: <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip</a></p>
+<p>Data was then unpackaged and saved to the working directory The data has been split to a training and test dataset Each of the datasets (Training &amp; Test) contains the following data<br />- ‘README.txt’<br />- ‘features_info.txt’: Shows information about the variables used on the feature vector.<br />- ‘features.txt’: List of all features.<br />- ‘activity_labels.txt’: Links the class labels with their activity name.<br />- ‘train/X_train.txt’: Training set.<br />- ‘train/y_train.txt’: Training labels.<br />- ‘test/X_test.txt’: Test set.<br />- ‘test/y_test.txt’: Test labels.</p>
 </div>
 <div id="processing-steps-of-raw-data-to-tidy-data" class="section level2">
 <h2>Processing Steps of Raw Data to Tidy Data</h2>
@@ -122,6 +122,22 @@ mean_data &lt;- cast(melted_data, subject + activity ~variable ,fun.aggregate=me
 </div>
 <div id="code-book" class="section level2">
 <h2>Code Book</h2>
+<p><strong>Variable descriptions</strong></p>
+<p>time domain , Body Accelerometer, Mean and Standard Deviations in the X,Y,Z directions<br> tBodyAcc-mean()-X /br&gt; tBodyAcc-mean()-Y“</br> tBodyAcc-mean()-Z”</br> tBodyAcc-std()-X“</br> tBodyAcc-std()-Y”</br> tBodyAcc-std()-Z“</br></p>
+<p>time domain , Gravity Accelerometer , Mean and Standard Deviations in the X,Y,Z directions<br> tGravityAcc-mean()-X“</br> tGravityAcc-mean()-Y”</br> tGravityAcc-mean()-Z“</br> tGravityAcc-std()-X”</br> tGravityAcc-std()-Y“</br> tGravityAcc-std()-Z”</br></p>
+<p>time domain , Body Accelerometer filtered for jerk, Mean and Standard Deviations in the X,Y,Z directions<br> tBodyAccJerk-mean()-X“</br> tBodyAccJerk-mean()-Y”</br> tBodyAccJerk-mean()-Z“</br> tBodyAccJerk-std()-X”</br> tBodyAccJerk-std()-Y“</br> tBodyAccJerk-std()-Z”</br></p>
+<p>time domain , Body Gyrometer, Mean and Standard Deviations in the X,Y,Z directions<br> tBodyGyro-mean()-X“</br> tBodyGyro-mean()-Y”</br> tBodyGyro-mean()-Z“</br> tBodyGyro-std()-X”</br> tBodyGyro-std()-Y“</br> tBodyGyro-std()-Z”</br></p>
+<p>time domain , Body Gyrometer filtered for jerk, Mean and Standard Deviations in the X,Y,Z directions<br> tBodyGyroJerk-mean()-X“</br> tBodyGyroJerk-mean()-Y”</br> tBodyGyroJerk-mean()-Z“</br> tBodyGyroJerk-std()-X”</br> tBodyGyroJerk-std()-Y“</br> tBodyGyroJerk-std()-Z”</br></p>
+<p>time domain , Body Accelerometer filtered for magnitude, Mean and Standard Deviations<br> tBodyAccMag-mean()“</br> tBodyAccMag-std()”</br></p>
+<p>time domain , Gravity Accelerometer filtered for magnitude, Mean and Standard Deviations<br> tGravityAccMag-mean()“</br> tGravityAccMag-std()”</br></p>
+<p>time domain , Body Accelerometer filtered for Jerk and magnitude, Mean and Standard Deviations<br> tBodyAccJerkMag-mean()“</br> tBodyAccJerkMag-std()”</br></p>
+<p>time domain , Gravity Accelerometer filtered for Jerk and magnitude, Mean and Standard Deviations<br> tBodyGyroMag-mean()“</br> tBodyGyroMag-std()”</br></p>
+<p>time domain , Gravity Gyrometer filtered for Jerk and magnitude, Mean and Standard Deviations<br> tBodyGyroJerkMag-mean()“</br> tBodyGyroJerkMag-std()”</br></p>
+<p>Frequency domain , Body Accelerometer, Mean and Standard Deviations in X,Y, and Z directions<br> fBodyAcc-mean()-X“</br> fBodyAcc-mean()-Y” - </br> fBodyAcc-mean()-Z&quot; </br> fBodyAcc-std()-X&quot; </br> fBodyAcc-std()-Y&quot; </br> fBodyAcc-std()-Z&quot; </br> fBodyAcc-meanFreq()-X&quot; </br> fBodyAcc-meanFreq()-Y&quot; </br> fBodyAcc-meanFreq()-Z“</br></p>
+<p>Frequency domain , Body Accelerometer filtered for jerk, Mean and Standard Deviations in X,Y, and Z directions<br fBodyAccJerk-mean()-X" < br> fBodyAccJerk-mean()-Y&quot; </br> fBodyAccJerk-mean()-Z&quot; </br> fBodyAccJerk-std()-X&quot; </br> fBodyAccJerk-std()-Y“</br> fBodyAccJerk-std()-Z” </br> fBodyAccJerk-meanFreq()-X&quot; </br> fBodyAccJerk-meanFreq()-Y&quot; </br> fBodyAccJerk-meanFreq()-Z&quot; </br></p>
+<p>Frequency domain , Body Gyrometer, Mean and Standard Deviations in X,Y, and Z directions<br fBodyGyro-mean()-X" < br> fBodyGyro-mean()-Y&quot; </br> fBodyGyro-mean()-Z&quot; </br> fBodyGyro-std()-X&quot; </br> fBodyGyro-std()-Y&quot; </br> fBodyGyro-std()-Z&quot; </br> fBodyGyro-meanFreq()-X&quot; </br> fBodyGyro-meanFreq()-Y&quot; </br> fBodyGyro-meanFreq()-Z&quot; </br></p>
+<p>Frequency domain , Body Accelerometer filtered for jerk and magnitude, Mean and Standard Deviations in X,Y, and Z directions<br fBodyAccMag-mean()" < br> fBodyAccMag-std()&quot; </br> fBodyAccMag-meanFreq()&quot; </br> fBodyBodyAccJerkMag-mean()&quot; </br> fBodyBodyAccJerkMag-std()&quot; </br> fBodyBodyAccJerkMag-meanFreq()&quot; </br></p>
+<p>Frequency domain , Body Gyrometer filtered for jerk and magnitude, Mean and Standard Deviations in X,Y, and Z directions<br fBodyBodyGyroMag-mean()" < br> fBodyBodyGyroMag-std()&quot; </br> fBodyBodyGyroMag-meanFreq()&quot; </br> fBodyBodyGyroJerkMag-mean()&quot; </br> fBodyBodyGyroJerkMag-std()&quot; </br> fBodyBodyGyroJerkMag-meanFreq()&quot; </br></p>
 </div>
 </div>
 
